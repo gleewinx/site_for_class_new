@@ -84,15 +84,15 @@
 
   <p id="generated-text"></p>
 
-  <button class="generate-btn" onclick="generate()">avg részeg faszi ossza az észt neked kelenföldön</button>
+  <button class="generate-btn" onclick="generate()">beszélgess papával</button>
 
 <script>
-  const words = ["drogosak", "dagadtak", "migránsok", "kínaiak", "lusták"];
+  const words = ["cigányok", "libsik", "migránsok", "kínaiak", "buzik"];
 
   function generate() {
     const w = () => words[Math.floor(Math.random() * words.length)];
     document.getElementById("generated-text").innerText =
-      `A ${w()} macskák ${w()} és emiatt nagyon ${w()}, ${w()} és ${w()}.`;
+      `A pesti ${w()}  ${w()} és emiatt nagyon ${w()}, ${w()} és ${w()}.`;
 
     makeSnow();
   }
@@ -143,6 +143,7 @@
 
 </body>
 </html>
+
 
 
 
