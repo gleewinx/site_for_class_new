@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>gleewin_site</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url("weboldalhatter.png") no-repeat center center fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    /* TV */
+    .tv-wrapper {
+      position: absolute;
+      top: 28%;  
+      left: 36%;
+      width: 28%;
+      text-align: center;
+    }
+
+    .tv-video {
+      width: 100%;
+      border: 4px solid black;
+      background: black;
+    }
+
+    .tv-link {
+      display: block;
+      margin-top: 8px;
+      font-size: 18px;
+      color: cyan;
+      text-decoration: none;
+    }
+
+    /* bottomleft */
+    .site-name {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      font-size: 20px;
+      color: white;
+      text-shadow: 2px 2px 4px black;
+    }
+
+    /* bottomright */
+    .generate-btn {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #generated-text {
+      position: absolute;
+      bottom: 70px;
+      right: 20px;
+      max-width: 300px;
+      color: white;
+      text-shadow: 2px 2px 4px black;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="site-name">//gleewin_site</div>
+
+  <div class="tv-wrapper">
+    <video class="tv-video" controls>
+      <source src="videoloop.mp4" type="video/mp4">
+    </video>
+    <a class="tv-link" href="https://gleewinx.github.io/self_not_found/" target="_blank" rel="noopener noreferrer">
+      net_art
+    </a>
+  </div>
+
+  <p id="generated-text"></p>
+
+  <button class="generate-btn" onclick="generate()">szöveg generálása</button>
+
+<script>
+  const words = ["drogosak", "dagadtak", "migránsok", "kínaiak", "lusták"];
+
+  function generate() {
+    const w = () => words[Math.floor(Math.random() * words.length)];
+    document.getElementById("generated-text").innerText =
+      `A ${w()} macskák ${w()} és emiatt nagyon ${w()}, ${w()} és ${w()}.`;
+
+    makeSnow();
+  }
+
+  /* snow */
+  function makeSnow() {
+    const numFlakes = 50;
+    const colors = ['#e0f7ff', '#cceeff', '#f8f8f8'];
+    const body = document.body;
+
+    for (let i = 0; i < numFlakes; i++) {
+      const f = document.createElement('span');
+      f.innerText = '❄';
+      f.style.position = 'absolute';
+      f.style.fontSize = (12 + Math.random() * 18) + 'px';
+      f.style.left = Math.random() * window.innerWidth + 'px';
+      f.style.top = Math.random() * -window.innerHeight + 'px';
+      f.style.color = colors[Math.floor(Math.random() * colors.length)];
+      f.style.opacity = 0.7 + Math.random() * 0.3;
+      f.style.pointerEvents = 'none';
+      body.appendChild(f);
+
+      const speed = 0.5 + Math.random() * 1.5;
+      const sway = Math.random() * 20;
+
+      (function animate(flake, spd, swayAmount) {
+        let y = parseFloat(flake.style.top);
+        let x = parseFloat(flake.style.left);
+        let swayPhase = Math.random() * Math.PI * 2;
+
+        function step() {
+          y += spd;
+          swayPhase += 0.02;
+          flake.style.top = y + 'px';
+          flake.style.left = x + Math.sin(swayPhase) * swayAmount + 'px';
+
+          if (y > window.innerHeight) {
+            y = -20;
+            x = Math.random() * window.innerWidth;
+          }
+          requestAnimationFrame(step);
+        }
+        step();
+      })(f, speed, sway);
+    }
+  }
+</script>
+
+</body>
+</html>
