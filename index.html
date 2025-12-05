@@ -15,12 +15,12 @@
       overflow: hidden;
     }
 
-    /* TV */
+    /* TV  */
     .tv-wrapper {
       position: absolute;
-      top: 28%;  
-      left: 36%;
-      width: 28%;
+      top: 22%;      
+      left: 40%;     
+      width: 20%;    
       text-align: center;
     }
 
@@ -31,28 +31,28 @@
     }
 
     .tv-link {
-      display: block;
-      margin-top: 8px;
+      position: absolute;
+      top: 35%;
+      left: 105%;  
       font-size: 18px;
-      color: cyan;
+      color: black;       
       text-decoration: none;
+      white-space: nowrap;
     }
 
-    /* bottomleft */
     .site-name {
       position: absolute;
-      bottom: 20px;
-      left: 20px;
-      font-size: 20px;
+      bottom: 120px;   
+      left: 60px;      
+      font-size: 34px; 
       color: white;
       text-shadow: 2px 2px 4px black;
     }
 
-    /* bottomright */
     .generate-btn {
       position: absolute;
       bottom: 20px;
-      right: 20px;
+      right: 180px;  
       padding: 10px 20px;
       font-size: 16px;
       cursor: pointer;
@@ -61,13 +61,14 @@
     #generated-text {
       position: absolute;
       bottom: 70px;
-      right: 20px;
+      right: 180px;  
       max-width: 300px;
       color: white;
       text-shadow: 2px 2px 4px black;
       font-size: 18px;
     }
   </style>
+</head>
 </head>
 <body>
 
@@ -84,7 +85,7 @@
 
   <p id="generated-text"></p>
 
-  <button class="generate-btn" onclick="generate()">szöveg generálása</button>
+  <button class="generate-btn" onclick="generate()">avg részeg faszi ossza az észt neked kelenföldön</button>
 
 <script>
   const words = ["drogosak", "dagadtak", "migránsok", "kínaiak", "lusták"];
@@ -143,3 +144,4 @@
 
 </body>
 </html>
+
